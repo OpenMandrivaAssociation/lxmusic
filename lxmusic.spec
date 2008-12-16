@@ -9,6 +9,7 @@ Patch0:		lxmusic-r1077.patch
 URL:		http://lxde.sourceforge.net/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires:	gtk+2-devel xmms2-devel
+BuildRequires:	intltool
 Requires:	xmms2 >= 0.5
 
 %description
