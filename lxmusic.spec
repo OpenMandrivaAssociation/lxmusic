@@ -5,7 +5,6 @@ Release:	%mkrel 1
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%name-%version.tar.gz
-Patch0:		lxmusic-r1077.patch
 URL:		http://lxde.sourceforge.net/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires:	gtk+2-devel xmms2-devel
@@ -18,7 +17,6 @@ It can do nothing more than playing music files.
 
 %prep
 %setup -q
-%patch0 -p2
 
 %build
 %configure2_5x
