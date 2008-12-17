@@ -35,5 +35,5 @@ rm -rf %buidlroot
 %defattr(-, root, root)
 %{_bindir}/%name
 %{_datadir}/%name
+%{_datadir}/pixmaps/*.png
 %{_datadir}/applications/*.desktop
-%{_iconsdir}/*/*/*/*
