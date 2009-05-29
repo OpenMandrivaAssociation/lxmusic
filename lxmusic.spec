@@ -5,7 +5,7 @@ Release:	%mkrel 1
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%name-%version.tar.gz
-URL:		http://lxde.sourceforge.net/
+URL:		http://www.lxde.org/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires:	gtk+2-devel >= 2.0
 Buildrequires:	xmms2-devel >= 0.6
