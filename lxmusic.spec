@@ -1,6 +1,6 @@
 Summary:	Lightweight XMMS2 GUI frontend
 Name:     	lxmusic
-Version:	0.3.0
+Version:	0.4.0
 Release:	%mkrel 1
 License:	GPLv2+
 Group:		Graphical desktop/Other
