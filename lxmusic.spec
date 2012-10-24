@@ -34,7 +34,7 @@ It can do nothing more than playing music files.
 %find_lang %{name}
 
 %files -f %{name}.lang
-%{_bindir}/%name
-%{_datadir}/%name
+%{_bindir}/%{name}
+%{_datadir}/%{name}
 %{_datadir}/pixmaps/*.png
 %{_datadir}/applications/*.desktop
