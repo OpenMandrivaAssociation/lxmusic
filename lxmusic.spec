@@ -5,6 +5,7 @@ Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%name-%version.tar.gz
+Patch1:		lxmusic-0.4.5-libnotify-0.7.0.patch
 URL:		http://www.lxde.org/
 BuildRequires:	gtk+2-devel >= 2.0
 Buildrequires:	xmms2-devel >= 0.8
@@ -17,6 +18,7 @@ It can do nothing more than playing music files.
 
 %prep
 %setup -q
+%patch1 -p1 -b .libnotify-0.7.0~
 
 %build
 %configure2_5x
