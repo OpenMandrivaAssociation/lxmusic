@@ -13,7 +13,6 @@ URL:		http://www.lxde.org/
 BuildRequires:	gtk+2-devel >= 2.0
 Buildrequires:	xmms2-devel >= 0.8
 BuildRequires:	intltool
-Requires:	xmms2 >= 0.8
 
 %description
 LXMusic is a simple GUI XMMS2 client with minimal functionality.
@@ -31,7 +30,7 @@ It can do nothing more than playing music files.
 %install
 %makeinstall_std
 
-%{find_lang} %{name}
+%find_lang %{name}
 
 %files -f %{name}.lang
 %{_bindir}/%name
