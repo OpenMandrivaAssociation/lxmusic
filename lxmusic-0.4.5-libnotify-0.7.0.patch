@@ -1,0 +1,13 @@
+--- lxmusic-0.4.5/src/lxmusic-notify.c.libnotify-0.7.0	2012-05-20 00:09:58.000000000 +0200
++++ lxmusic-0.4.5/src/lxmusic-notify.c	2012-10-24 16:04:39.916945856 +0200
+@@ -84,9 +84,8 @@ LXMusicNotification lxmusic_do_notify_pr
+     else 			
+ 	g_string_append( message, title );
+     struct _LXMusicNotification *lxn = g_new ( struct _LXMusicNotification, 1);
+-    lxn->notify = notify_notification_new (summary, message->str, NULL, NULL);
++    lxn->notify = notify_notification_new (summary, message->str, NULL);
+     notify_notification_set_urgency (lxn->notify, NOTIFY_URGENCY_NORMAL);
+-    notify_notification_attach_to_status_icon( lxn->notify, status_icon );
+     notify_notification_set_timeout (lxn->notify, NOTIFY_EXPIRES_DEFAULT);
+     g_string_free( message, TRUE );
+     return lxn;
