@@ -43,17 +43,14 @@ It can do nothing more than playing music files.
 #----------------------------------------------------------------------
 
 %prep
-%setup -q
-%apply_patches
-#% patch1 -p1 -b .libnotify-0.7.0~
-#% patch2 -p1 -b .segfault-in-xmmsv_get_int~
+%autosetup -p1
 
 %build
 %configure
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 # locales
 %find_lang %{name}
