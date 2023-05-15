@@ -1,15 +1,11 @@
 Summary:	Lightweight XMMS2 GUI frontend
 Name:     	lxmusic
 Version:	0.4.7
-Release:	3
+Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/Other
 URL:		http://www.lxde.org/
 Source0:	https://downloads.sourceforge.net/lxde/%{name}-%{version}.tar.xz
-#Patch1:		lxmusic-0.4.5-libnotify-0.7.0.patch
-# https://sourceforge.net/tracker/?func=detail&atid=894869&aid=3038938&group_id=180858
-# Patch at http://paste.lisp.org/display/116965/1,1/raw
-#Patch2:		lxmusic-0.4.4-fix-segfault-in-xmmsv_get_int.patch
 
 BuildRequires:	desktop-file-utils
 BuildRequires:  intltool
@@ -38,7 +34,7 @@ It can do nothing more than playing music files.
 %{_datadir}/%{name}
 %{_datadir}/pixmaps/*.png
 %{_datadir}/applications/%{name}.desktop
-%{_mandir}/man1/%{name}.1.xz
+%{_mandir}/man1/%{name}.1.*
 
 #----------------------------------------------------------------------
 
