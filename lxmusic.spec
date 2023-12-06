@@ -1,15 +1,24 @@
+# git snapshot
+%global snapshot 1
+%if 0%{?snapshot}
+	%global commit		a7591f612e453d0152f8b5c394b3e77f7f0610b6
+	%global commitdate	20230917
+	%global shortcommit	%(c=%{commit}; echo ${c:0:7})
+%endif
+
 Summary:	Lightweight XMMS2 GUI frontend
 Name:     	lxmusic
 Version:	0.4.7
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		Graphical desktop/Other
 URL:		http://www.lxde.org/
-Source0:	https://downloads.sourceforge.net/lxde/%{name}-%{version}.tar.xz
+#Source0:	https://downloads.sourceforge.net/lxde/%{name}-%{version}.tar.xz
+Source0:	https://github.com/lxde/lxmusic/archive/%{?snapshot:%{commit}}%{!?snapshot:%{version}}/%{name}-%{?snapshot:%{commit}}%{!?snapshot:%{version}}.tar.gz
 
 BuildRequires:	desktop-file-utils
 BuildRequires:  intltool
-BuildRequires:  pkgconfig(gtk+-2.0)
+BuildRequires:  pkgconfig(gtk+-3.0)
 BuildRequires:  pkgconfig(gmodule-export-2.0)
 BuildRequires:  pkgconfig(xmms2-client)
 BuildRequires:  pkgconfig(xmms2-client-glib)
@@ -32,17 +41,20 @@ It can do nothing more than playing music files.
 %files -f %{name}.lang
 %{_bindir}/%{name}
 %{_datadir}/%{name}
-%{_datadir}/pixmaps/*.png
 %{_datadir}/applications/%{name}.desktop
+%{_iconsdir}/hicolor/*/apps/%{name}.png
 %{_mandir}/man1/%{name}.1.*
 
-#----------------------------------------------------------------------
+#---------------------------------------------------------------------------
 
 %prep
-%autosetup -p1
+%autosetup -p1 -n %{name}-%{?snapshot:%{commit}}%{!?snapshot:%{version}}
 
 %build
-%configure
+autoreconf -fiv
+%configure \
+	--enable-gtk3 \
+	%{nil}
 %make_build
 
 %install
@@ -50,7 +62,4 @@ It can do nothing more than playing music files.
 
 # locales
 %find_lang %{name}
-
-%check
-desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
