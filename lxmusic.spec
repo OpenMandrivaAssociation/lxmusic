@@ -12,7 +12,7 @@ Version:	0.4.7
 Release:	2
 License:	GPLv2+
 Group:		Graphical desktop/Other
-URL:		http://www.lxde.org/
+URL:		https://www.lxde.org/
 #Source0:	https://downloads.sourceforge.net/lxde/%{name}-%{version}.tar.xz
 Source0:	https://github.com/lxde/lxmusic/archive/%{?snapshot:%{commit}}%{!?snapshot:%{version}}/%{name}-%{?snapshot:%{commit}}%{!?snapshot:%{version}}.tar.gz
 
