@@ -1,5 +1,5 @@
 # git snapshot
-%global snapshot 1
+#global snapshot 1
 %if 0%{?snapshot}
 	%global commit		e61107ccad2c3a1c80641ed1696e1ee9fd8e66b5
 	%global commitdate	20240817
@@ -8,8 +8,8 @@
 
 Summary:	Lightweight XMMS2 GUI frontend
 Name:     	lxmusic
-Version:	0.4.7
-Release:	3
+Version:	0.4.8
+Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/Other
 URL:		https://www.lxde.org/
